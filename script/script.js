@@ -20,26 +20,42 @@ function removeCard(index) {
   books.splice(index, 1);
 }
 
+// Books constructor
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+
 // Create a function that will print the books cards
-// Create a variable that will hold the books container
 let booksContainer = document.getElementById('books-container');
 // Loop through the books array
 for (let index = 0; index < books.length; index++) {
   booksContainer.innerHTML += `<div class="book-card">
-    <div class="book-title">${books[index].title}</div>
-    <div class="book-author">${books[index].author}</div>
-    <button class="card-remove-button" onclick="removeCard(${index})">Remove</button>
-  </div>`;
+      <div class="book-title">${books[index].title}</div>
+      <div class="book-author">${books[index].author}</div>
+      <button class="card-remove-button" onclick="removeCard(${index})">Remove</button>
+    </div>`;
 }
 
 // Variables to hold the input values
 const titleInput = document.getElementById('title-input').value;
 const authorInput = document.getElementById('author-input').value;
 
-// A function to add a new book to the array
-function addBook() {
-  books.push({
-    title: titleInput,
-    author: authorInput,
-  });
+// A click listener for the add button to add inputs value as an object to the books array
+const addBtn = document.querySelector('#add-btn');
+addBtn.addEventListener('click', () => {
+  let newBook = new Book(titleInput, authorInput);
+  books.push(newBook);
+  loadBook(books.length -1);
+});
+
+// Function to load newly added books
+function loadBook(index) {
+  booksContainer.innerHTML += `<div class="book-card">
+  <div class="book-title">${books[index].title}</div>
+  <div class="book-author">${books[index].author}</div>
+  <button class="card-remove-button" onclick="removeCard(${index})">Remove</button>
+</div>`;
 }
