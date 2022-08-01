@@ -36,7 +36,7 @@ section h1 {
 .book-title {
   font-size: 20px;
   font-style: bolder;
-  border: solid 2px red;
+  border: solid 2px yellowgreen;
   border-radius: .5em;
   padding: .5em;
   width: fit-content;
@@ -45,7 +45,17 @@ section h1 {
 .book-author {
   font-size: 20px;
   font-style: italic;
+  border: solid 2px yellowgreen;
+  border-radius: .5em;
+  padding: .5em;
+  width: fit-content;
+}
+
+.card-remove-button {
+  align-self: center;
+  font-size: 20px;
   border: solid 2px red;
+  background-color: #ffc2c2;
   border-radius: .5em;
   padding: .5em;
   width: fit-content;
