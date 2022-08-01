@@ -18,6 +18,7 @@ const books = [
 // A function to remove current object from the array
 function removeCard(index) {
   books.splice(index, 1);
+
 }
 
 // Books constructor
@@ -39,14 +40,14 @@ for (let index = 0; index < books.length; index++) {
     </div>`;
 }
 
-// Variables to hold the input values
-const titleInput = document.getElementById('title-input').value;
-const authorInput = document.getElementById('author-input').value;
+// Variables to hold the input ids
+const titleInput = document.getElementById('title-input');
+const authorInput = document.getElementById('author-input');
 
 // A click listener for the add button to add inputs value as an object to the books array
 const addBtn = document.querySelector('#add-btn');
 addBtn.addEventListener('click', () => {
-  let newBook = new Book(titleInput, authorInput);
+  let newBook = new Book(titleInput.value, authorInput.value);
   books.push(newBook);
   loadBook(books.length -1);
 });
