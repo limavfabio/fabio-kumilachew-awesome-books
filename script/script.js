@@ -1,25 +1,13 @@
+//----------------- Variables
+// Create a function that will print the books cards
+let booksContainer = document.getElementById('books-container');
+let bookCard = document.getElementsByClassName('book-card');
+// Variables to hold the input ids
+const titleInput = document.getElementById('title-input');
+const authorInput = document.getElementById('author-input');
+
 // Create an array of objects for the books information
-const books = [
-  {
-    title: 'The Design of EveryDay Things',
-    author: 'Don Norman',
-  },
-  {
-    title: 'The Most Human Human',
-    author: 'Brian Christian',
-  },
-  {
-    title: 'A Brief History of Time',
-    author: 'Stephen Hawking',
-  },
-];
-
-// ------------------- Functions -------------------
-// A function to remove current object from the array
-function removeCard(index) {
-  books.splice(index, 1);
-
-}
+const books = [];
 
 // Books constructor
 class Book {
@@ -29,27 +17,32 @@ class Book {
   }
 }
 
-// Create a function that will print the books cards
-let booksContainer = document.getElementById('books-container');
-// Loop through the books array
-for (let index = 0; index < books.length; index++) {
-  booksContainer.innerHTML += `<div class="book-card">
-      <div class="book-title">${books[index].title}</div>
-      <div class="book-author">${books[index].author}</div>
-      <button class="card-remove-button" onclick="removeCard(${index})">Remove</button>
-    </div>`;
+// ------------------- Functions -------------------
+// A function to remove current object from the array
+function removeCard(index) {
+  books.splice(index, 1);
+  reloadBooks();
+}
+// A function to reload the books cards
+function reloadBooks() {
+  booksContainer.innerHTML = '';
+  for (let index = 0; index < books.length; index++) {
+    booksContainer.innerHTML += `<div class="book-card">
+        <div class="book-title">${books[index].title}</div>
+        <div class="book-author">${books[index].author}</div>
+        <button class="card-remove-button" onclick="removeCard(${index})">Remove</button>
+      </div>`;
+  }
 }
 
-// Variables to hold the input ids
-const titleInput = document.getElementById('title-input');
-const authorInput = document.getElementById('author-input');
+// Loop through the books array
 
 // A click listener for the add button to add inputs value as an object to the books array
 const addBtn = document.querySelector('#add-btn');
 addBtn.addEventListener('click', () => {
   let newBook = new Book(titleInput.value, authorInput.value);
   books.push(newBook);
-  loadBook(books.length -1);
+  loadBook(books.length - 1);
 });
 
 // Function to load newly added books

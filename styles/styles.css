@@ -52,12 +52,12 @@ section h1 {
 }
 
 .card-remove-button {
-  /* align-self: center;
+  align-self: center;
   font-size: 20px;
   border: solid 2px red;
   background-color: #ffc2c2;
   border-radius: .5em;
-  padding: .5em; */
+  padding: .5em;
   width: fit-content;
 }
 
