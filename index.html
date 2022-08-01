@@ -10,9 +10,19 @@
   <body>
     <section>
       <h1>Awesome Books</h1>
+      <p>A webapp by Fábio and Kumilachew</p>
       <main class="main-container">
-        <div class="books" id="books"></div>
-        <form class="form">
+        <div id="books-container">
+          <!-- <div class="book-card">
+            <div class="book-title">Book Title</div>
+            <div class="book-author">Book Author</div>
+          </div>
+          <div class="book-card">
+            <div class="book-title">Book Title</div>
+            <div class="book-author">Book Author</div>
+          </div> -->
+        </div>
+        <form>
           <input
             type="text"
             id="title"
@@ -24,7 +34,7 @@
             type="text"
             id="author"
             class="input-class"
-            placeholder="Auther"
+            placeholder="Author"
           />
           <br />
           <button type="submit" class="add-btn">Add</button>

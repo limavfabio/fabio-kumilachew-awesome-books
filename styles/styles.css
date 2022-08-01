@@ -1,3 +1,8 @@
+/*------------------- Import Google Fonts */
+/* Import Lato fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
 section {
   margin-top: 40px;
   margin-left: 250px;
@@ -14,3 +19,35 @@ section h1 {
   margin: 7px;
   width: 50px;
 }
+
+/* Books cards styling */
+.book-card {
+  font-family: "lato", sans-serif;
+  margin: 7px;
+  padding: 7px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 400px;
+}
+
+.book-title {
+  font-size: 20px;
+  font-style: bolder;
+  border: solid 2px red;
+  border-radius: .5em;
+  padding: .5em;
+  width: fit-content;
+}
+
+.book-author {
+  font-size: 20px;
+  font-style: italic;
+  border: solid 2px red;
+  border-radius: .5em;
+  padding: .5em;
+  width: fit-content;
+}
+
