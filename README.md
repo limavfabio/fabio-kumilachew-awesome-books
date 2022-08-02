@@ -24,9 +24,9 @@ Then cd into fabio-kumilachew-awesome-books directory.
 :adult: **Fábio Vinícius Dias Lima**
 :adult: **Kumilachew Getie**
 
--GitHub: [@githubhandle](https://github.com/limavfabio)
--GitHub: [@githubhandle](https://github.com/Kumilachew-g)
--Linkedin: [LinkedIn](https://www.linkedin.com/in/kumilachew-getie-0356bb157/)
+- GitHub: [@githubhandle](https://github.com/limavfabio)
+- GitHub: [@githubhandle](https://github.com/Kumilachew-g)
+- Linkedin: [LinkedIn](https://www.linkedin.com/in/kumilachew-getie-0356bb157/)
 
 # Contributing
 
