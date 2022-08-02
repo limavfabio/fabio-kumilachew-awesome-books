@@ -15,6 +15,7 @@ class Book {
   }
 }
 
+// ------------------- Functions -------------------
 // A function to reload the books cards
 function reloadBooks() {
   booksContainer.innerHTML = '';
@@ -28,10 +29,19 @@ function reloadBooks() {
   }
 }
 
-// ------------------- Functions -------------------
+// ------------------- get data from local storage and reload the books cards
+// Parse object from localStorage and store to a variable
+const storedBooks = JSON.parse(localStorage.getItem('books'));
+// If there is a storedBooks array, set the books array to the storedBooks array
+if (storedBooks) {
+  books.push(...storedBooks);
+  reloadBooks();
+}
+
 // A function to remove current object from the array
 function removeCard(index) {
   books.splice(index, 1);
+  localStorage.setItem('books', JSON.stringify(books));
   reloadBooks();
 }
 
@@ -53,4 +63,3 @@ addBtn.addEventListener('click', () => {
   loadBook(books.length - 1);
   localStorage.setItem('books', JSON.stringify(books));
 });
-removeCard();
