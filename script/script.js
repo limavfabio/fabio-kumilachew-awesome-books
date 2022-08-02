@@ -5,7 +5,12 @@ const titleInput = document.getElementById('title-input');
 const authorInput = document.getElementById('author-input');
 
 // Create an array of objects for the books information
-const books = [];
+class BooksClass {
+  constructor() {
+    return [];
+  }
+}
+let books = new BooksClass();
 
 // Books constructor
 class Book {
