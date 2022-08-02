@@ -9,10 +9,28 @@ class BooksClass {
   constructor() {
     return [];
   }
+
+  // Function to load newly added books
+  static loadBook(index) {
+    booksContainer.innerHTML += `<div class="book-card">
+    <div class="book-title">${books[index].title}</div>
+    <div class="book-author">${books[index].author}</div>
+    <button class="card-remove-button" onclick="BooksClass.removeCard(${index})">Remove</button>
+    <div id ='line'> </div>
+    </div>`;
+  }
+  // A function to remove current object from the array
+  static removeCard(index) {
+    books.splice(index, 1);
+    localStorage.setItem('books', JSON.stringify(books));
+    reloadBooks();
 }
+}
+
+// Create a new books object
 let books = new BooksClass();
 
-// Books constructor
+// Books array to store the books information
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -28,7 +46,7 @@ function reloadBooks() {
     booksContainer.innerHTML += `<div class="book-card">
         <div class="book-title">${books[index].title}</div>
         <div class="book-author">${books[index].author}</div>
-        <button class="card-remove-button" onclick="removeCard(${index})">Remove</button>
+        <button class="card-remove-button" onclick="BooksClass.removeCard(${index})">Remove</button>
         <div id ='line'> </div>
       </div>`;
   }
@@ -43,28 +61,12 @@ if (storedBooks) {
   reloadBooks();
 }
 
-// A function to remove current object from the array
-function removeCard(index) {
-  books.splice(index, 1);
-  localStorage.setItem('books', JSON.stringify(books));
-  reloadBooks();
-}
-
-// Function to load newly added books
-function loadBook(index) {
-  booksContainer.innerHTML += `<div class="book-card">
-  <div class="book-title">${books[index].title}</div>
-  <div class="book-author">${books[index].author}</div>
-  <button class="card-remove-button" onclick="removeCard(${index})">Remove</button>
-  <div id ='line'> </div>
-</div>`;
-}
 
 // A click listener for the add button to add inputs value as an object to the books array
 const addBtn = document.querySelector('#add-btn');
 addBtn.addEventListener('click', () => {
   const newBook = new Book(titleInput.value, authorInput.value);
   books.push(newBook);
-  loadBook(books.length - 1);
+  BooksClass.loadBook(books.length - 1);
   localStorage.setItem('books', JSON.stringify(books));
 });
