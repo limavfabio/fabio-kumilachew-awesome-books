@@ -1,3 +1,5 @@
+/* eslint-disable max-classes-per-file */
+
 // ----------------- Variables
 const booksContainer = document.getElementById('books-container');
 // Variables to hold the input ids
@@ -11,7 +13,7 @@ class BooksClass {
   }
 }
 // Create a new books object
-let books = new BooksClass();
+const books = new BooksClass();
 
 // Books array to store the books information
 class Book {
@@ -19,6 +21,7 @@ class Book {
     this.title = title;
     this.author = author;
   }
+
   // Method to load newly added books
   static loadBook(index) {
     booksContainer.innerHTML += `<div class="book-card">
@@ -49,7 +52,6 @@ class Book {
     }
   }
 }
-
 
 // ------------------- Functions -------------------
 
