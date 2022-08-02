@@ -9,24 +9,7 @@ class BooksClass {
   constructor() {
     return [];
   }
-
-  // Function to load newly added books
-  static loadBook(index) {
-    booksContainer.innerHTML += `<div class="book-card">
-    <div class="book-title">${books[index].title}</div>
-    <div class="book-author">${books[index].author}</div>
-    <button class="card-remove-button" onclick="BooksClass.removeCard(${index})">Remove</button>
-    <div id ='line'> </div>
-    </div>`;
-  }
-  // A function to remove current object from the array
-  static removeCard(index) {
-    books.splice(index, 1);
-    localStorage.setItem('books', JSON.stringify(books));
-    reloadBooks();
 }
-}
-
 // Create a new books object
 let books = new BooksClass();
 
@@ -36,21 +19,39 @@ class Book {
     this.title = title;
     this.author = author;
   }
-}
-
-// ------------------- Functions -------------------
-// A function to reload the books cards
-function reloadBooks() {
-  booksContainer.innerHTML = '';
-  for (let index = 0; index < books.length; index += 1) {
+  // Method to load newly added books
+  static loadBook(index) {
     booksContainer.innerHTML += `<div class="book-card">
-        <div class="book-title">${books[index].title}</div>
-        <div class="book-author">${books[index].author}</div>
-        <button class="card-remove-button" onclick="BooksClass.removeCard(${index})">Remove</button>
-        <div id ='line'> </div>
+      <div class="book-title">${books[index].title}</div>
+      <div class="book-author">${books[index].author}</div>
+      <button class="card-remove-button" onclick="Book.removeCard(${index})">Remove</button>
+      <div id ='line'> </div>
       </div>`;
   }
+
+  // A Method to remove current object from the array
+  static removeCard(index) {
+    books.splice(index, 1);
+    localStorage.setItem('books', JSON.stringify(books));
+    Book.reloadBooks();
+  }
+
+  // A Method to reload the books cards
+  static reloadBooks() {
+    booksContainer.innerHTML = '';
+    for (let index = 0; index < books.length; index += 1) {
+      booksContainer.innerHTML += `<div class="book-card">
+            <div class="book-title">${books[index].title}</div>
+            <div class="book-author">${books[index].author}</div>
+            <button class="card-remove-button" onclick="Book.removeCard(${index})">Remove</button>
+            <div id ='line'> </div>
+          </div>`;
+    }
+  }
 }
+
+
+// ------------------- Functions -------------------
 
 // ------------------- get data from local storage and reload the books cards
 // Parse object from localStorage and store to a variable
@@ -58,15 +59,14 @@ const storedBooks = JSON.parse(localStorage.getItem('books'));
 // If there is a storedBooks array, set the books array to the storedBooks array
 if (storedBooks) {
   books.push(...storedBooks);
-  reloadBooks();
+  Book.reloadBooks();
 }
-
 
 // A click listener for the add button to add inputs value as an object to the books array
 const addBtn = document.querySelector('#add-btn');
 addBtn.addEventListener('click', () => {
   const newBook = new Book(titleInput.value, authorInput.value);
   books.push(newBook);
-  BooksClass.loadBook(books.length - 1);
+  Book.loadBook(books.length - 1);
   localStorage.setItem('books', JSON.stringify(books));
 });
