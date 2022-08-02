@@ -25,7 +25,7 @@ Then cd into fabio-kumilachew-awesome-books directory.
 
 - GitHub: [@githubhandle](https://github.com/limavfabio)
 
-  :adult: **Kumilachew Getie**
+:adult: **Kumilachew Getie**
 
 - GitHub: [@githubhandle](https://github.com/Kumilachew-g)
 - Linkedin: [LinkedIn](https://www.linkedin.com/in/kumilachew-getie-0356bb157/)
