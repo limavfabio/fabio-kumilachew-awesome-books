@@ -43,6 +43,7 @@ addBtn.addEventListener('click', () => {
   let newBook = new Book(titleInput.value, authorInput.value);
   books.push(newBook);
   loadBook(books.length - 1);
+  localStorage.setItem('books', JSON.stringify(books));
 });
 
 // Function to load newly added books
@@ -51,5 +52,6 @@ function loadBook(index) {
   <div class="book-title">${books[index].title}</div>
   <div class="book-author">${books[index].author}</div>
   <button class="card-remove-button" onclick="removeCard(${index})">Remove</button>
+  <div id ='line'> </div>
 </div>`;
 }
