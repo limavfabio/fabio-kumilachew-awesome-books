@@ -27,7 +27,7 @@ class Book {
   // Method to load newly added books
   static loadBook(index) {
     booksContainer.innerHTML += `<div class="book-card">
-      <div class="book-title">${books[index].title}</div>
+      <div class="book-title"> " ${books[index].title} " by </div>
       <div class="book-author">${books[index].author}</div>
       <button class="card-remove-button" onclick="Book.removeCard(${index})">Remove</button>
       <div id ='line'> </div>
@@ -46,7 +46,7 @@ class Book {
     booksContainer.innerHTML = '';
     for (let index = 0; index < books.length; index += 1) {
       booksContainer.innerHTML += `<div class="book-card">
-            <div class="book-title">${books[index].title}</div>
+            <div class="book-title"> "${books[index].title}" by </div>
             <div class="book-author">${books[index].author}</div>
             <button class="card-remove-button" onclick="Book.removeCard(${index})">Remove</button>
             <div id ='line'> </div>
