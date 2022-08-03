@@ -44,7 +44,7 @@ class Book {
   static reloadBooks() {
     booksContainer.innerHTML = '';
     for (let index = 0; index < books.length; index += 1) {
-    booksContainer.innerHTML += `<div class="book-card">
+      booksContainer.innerHTML += `<div class="book-card">
       <div class="book-title"><strong>"${books[index].title}"</strong>&nbsp;by</div>
       <div class="book-author">${books[index].author}</div>
       <button class="card-remove-button" onclick="Book.removeCard(${index})">Remove</button>

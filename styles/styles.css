@@ -31,9 +31,11 @@ section h1 {
   margin: 7px;
   font-size: 20px;
   border: 3px solid #000;
+  width: 100%;
 }
 
 .add-btn {
+  align-self: flex-end;
   margin-left: auto;
   width: 55px;
   font-weight: bold;
@@ -41,13 +43,12 @@ section h1 {
 }
 
 .book-title {
-  margin-left: 30px;
-  margin: 8px;
+  margin: 8px 8px 8px 40px;
   font-weight: bold;
 }
 
 .book-author {
-  margin: 7px ;
+  margin: 7px;
   font-weight: bold;
 }
 
@@ -91,14 +92,6 @@ section h1 {
   font-size: 20px;
   font-weight: bold;
   max-width: 300px;
-}
-
-.input-class {
-  width: 100%;
-}
-.add-btn {
-  align-self: flex-end;
-  
 }
 
 .black-line {
