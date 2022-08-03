@@ -1,6 +1,8 @@
 /* eslint-disable max-classes-per-file */
 
 // ----------------- Variables
+
+// Variable to hold the outputs
 const booksContainer = document.getElementById('books-container');
 // Variables to hold the input ids
 const titleInput = document.getElementById('title-input');
