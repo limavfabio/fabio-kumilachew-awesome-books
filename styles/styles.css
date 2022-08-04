@@ -14,14 +14,16 @@ section {
   flex-direction: column;
   align-items: center;
 }
+
 .header-class {
   height: 75px;
   border: 2px solid #111;
   margin: 16px 0;
   width: 40%;
 }
+
 .brand {
-  color: #000000;
+  color: #000;
 }
 
 .main {
@@ -32,6 +34,7 @@ section {
   padding-right: 10px;
   width: 100%;
 }
+
 .nav-list {
   display: flex;
   align-items: center;
@@ -56,6 +59,13 @@ section {
   width: 95%;
 }
 
+.date {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  margin-left: 400px;
+}
+
 /* for mobile */
 
 @media screen and (max-width: 480px) {
@@ -65,8 +75,16 @@ section {
     margin: 16px 0;
     width: 100%;
   }
+
   .contact-p {
     text-align: center;
+  }
+
+  .date {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-left: auto;
   }
 }
 

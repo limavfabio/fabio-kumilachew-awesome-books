@@ -12,7 +12,7 @@ const authorInput = document.getElementById('author-input');
 const navListLink = document.getElementById('book-list');
 const addBookLink = document.getElementById('add-book');
 const contactLavlink = document.getElementById('contacts');
-const Year = document.getElementById('date');
+const year = document.getElementById('date');
 
 // Create an array of objects for the books information
 class BooksClass {
@@ -78,3 +78,6 @@ addBtn.addEventListener('click', () => {
   Book.loadBook(books.length - 1);
   localStorage.setItem('books', JSON.stringify(books));
 });
+
+const dateTime = new Date(Date.now());
+year.textContent = dateTime.toUTCString();
