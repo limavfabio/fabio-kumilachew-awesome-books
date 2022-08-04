@@ -8,6 +8,12 @@ const booksContainer = document.getElementById('books-container');
 const titleInput = document.getElementById('title-input');
 const authorInput = document.getElementById('author-input');
 
+// new
+const navListLink = document.getElementById('book-list');
+const addBookLink = document.getElementById('add-book');
+const contactNavlink = document.getElementById('contacts');
+const year = document.getElementById('date');
+
 // Create an array of objects for the books information
 class BooksClass {
   constructor() {
@@ -71,4 +77,46 @@ addBtn.addEventListener('click', () => {
   books.push(newBook);
   Book.loadBook(books.length - 1);
   localStorage.setItem('books', JSON.stringify(books));
+});
+
+const dateTime = new Date(Date.now());
+year.textContent = dateTime.toUTCString();
+
+// ------------------- Navigation -------------------
+// Variables to hold the navigation links
+const listLink = document.querySelector('#list-link');
+const addLink = document.querySelector('#add-link');
+const contactLink = document.querySelector('#contact-link');
+const booksList = document.querySelector('#books-list');
+const newBook = document.querySelector('#new-book');
+const contactSection = document.querySelector('#contact-section');
+
+// A click listener for the list link to show the books cards
+listLink.addEventListener('click', () => {
+  booksList.style.display = 'block';
+  listLink.style.color = 'blue';
+  newBook.style.display = 'none';
+  contactSection.style.display = 'none';
+  addLink.style.color = 'black';
+  contactLink.style.color = 'black';
+});
+
+// A click listener for the add link to show the add book form
+addLink.addEventListener('click', () => {
+  booksList.style.display = 'none';
+  addLink.style.color = 'blue';
+  newBook.style.display = 'flex';
+  listLink.style.color = 'black';
+  contactSection.style.display = 'none';
+  contactLink.style.color = 'black';
+});
+
+// A click listener for the contact link to show the contact form
+contactLink.addEventListener('click', () => {
+  booksList.style.display = 'none';
+  contactLink.style.color = 'blue';
+  newBook.style.display = 'none';
+  contactSection.style.display = 'block';
+  addLink.style.color = 'black';
+  listLink.style.color = 'black';
 });

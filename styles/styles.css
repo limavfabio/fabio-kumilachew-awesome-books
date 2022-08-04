@@ -15,6 +15,91 @@ section {
   align-items: center;
 }
 
+.header-class {
+  height: 75px;
+  border: 2px solid #111;
+  margin: 16px 0;
+  width: 40%;
+}
+
+.brand {
+  color: #000;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+li a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: space-between;
+  margin-right: 95px;
+}
+
+.add::before,
+.contact::before {
+  content: '';
+  padding-right: 10px;
+  margin: 10px;
+  border-right: 2px solid #000;
+  display: inline;
+}
+
+.all-book-lists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+}
+
+.date {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  margin-left: 400px;
+}
+
+/* for mobile */
+
+@media screen and (max-width: 480px) {
+  .header-class {
+    height: 75px;
+    border: 2px solid #111;
+    margin: 16px 0;
+    width: 100%;
+  }
+
+  .contact-p {
+    text-align: center;
+  }
+
+  .date {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-left: auto;
+  }
+
+  .footer {
+    height: 75px;
+    border: 2px solid #111;
+    margin: 16px 0;
+    width: 80%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   section {
     margin-top: 40px;
@@ -94,6 +179,25 @@ section h1 {
   max-width: 300px;
 }
 
+section h2 {
+  text-align: center;
+}
+
 .black-line {
   border-bottom: 3px solid black;
+}
+
+.footer {
+  border: 2px solid #000;
+  border-radius: 4px;
+  margin-bottom: 0;
+  margin-top: 200px;
+  padding: 10px 24px;
+  font-weight: 500;
+  width: 40%;
+}
+
+#new-book,
+#contact-section {
+  display: none;
 }
