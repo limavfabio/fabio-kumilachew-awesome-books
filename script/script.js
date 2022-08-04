@@ -94,20 +94,29 @@ const contactSection = document.querySelector('#contact-section');
 // A click listener for the list link to show the books cards
 listLink.addEventListener('click', () => {
   booksList.style.display = 'block';
+  listLink.style.color = 'blue';
   newBook.style.display = 'none';
   contactSection.style.display = 'none';
+  addLink.style.color = 'black';
+  contactLink.style.color = 'black';
 });
 
 // A click listener for the add link to show the add book form
 addLink.addEventListener('click', () => {
   booksList.style.display = 'none';
+  addLink.style.color = 'blue';
   newBook.style.display = 'flex';
+  listLink.style.color = 'black';
   contactSection.style.display = 'none';
+  contactLink.style.color = 'black';
 });
 
 // A click listener for the contact link to show the contact form
 contactLink.addEventListener('click', () => {
   booksList.style.display = 'none';
+  contactLink.style.color = 'blue';
   newBook.style.display = 'none';
   contactSection.style.display = 'block';
+  addLink.style.color = 'black';
+  listLink.style.color = 'black';
 });
