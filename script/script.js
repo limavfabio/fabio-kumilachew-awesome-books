@@ -101,7 +101,7 @@ listLink.addEventListener('click', () => {
 // A click listener for the add link to show the add book form
 addLink.addEventListener('click', () => {
   booksList.style.display = 'none';
-  newBook.style.display = 'block';
+  newBook.style.display = 'flex';
   contactSection.style.display = 'none';
 });
 
