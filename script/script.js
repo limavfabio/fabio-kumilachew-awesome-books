@@ -11,7 +11,7 @@ const authorInput = document.getElementById('author-input');
 // new
 const navListLink = document.getElementById('book-list');
 const addBookLink = document.getElementById('add-book');
-const contactLavlink = document.getElementById('contacts');
+const contactNavlink = document.getElementById('contacts');
 const year = document.getElementById('date');
 
 // Create an array of objects for the books information
