@@ -170,3 +170,14 @@ section h1 {
 .black-line {
   border-bottom: 3px solid black;
 }
+.footer {
+  border: 2px solid #000;
+  border-radius: 4px;
+  margin-bottom: 0;
+  margin-top: 20px;
+  padding: 10px 24px;
+  font-weight: 500;
+  bottom: 16px;
+  /* left: 0; */
+  width: 40%;
+}
