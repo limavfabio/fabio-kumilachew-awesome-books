@@ -14,6 +14,61 @@ section {
   flex-direction: column;
   align-items: center;
 }
+.header-class {
+  height: 75px;
+  border: 2px solid #111;
+  margin: 16px 0;
+  width: 40%;
+}
+.brand {
+  color: #000000;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
+  width: 100%;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: space-between;
+  margin-right: 95px;
+}
+
+.add::before,
+.contact::before {
+  content: '';
+  padding-right: 10px;
+  margin: 10px;
+  border-right: 2px solid #000;
+  display: inline;
+}
+
+.all-book-lists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+}
+
+/* for mobile */
+
+@media screen and (max-width: 480px) {
+  .header-class {
+    height: 75px;
+    border: 2px solid #111;
+    margin: 16px 0;
+    width: 100%;
+  }
+  .contact-p {
+    text-align: center;
+  }
+}
 
 @media screen and (min-width: 768px) {
   section {

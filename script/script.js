@@ -8,6 +8,12 @@ const booksContainer = document.getElementById('books-container');
 const titleInput = document.getElementById('title-input');
 const authorInput = document.getElementById('author-input');
 
+// new
+const navListLink = document.getElementById('book-list');
+const addBookLink = document.getElementById('add-book');
+const contactLavlink = document.getElementById('contacts');
+const Year = document.getElementById('date');
+
 // Create an array of objects for the books information
 class BooksClass {
   constructor() {
