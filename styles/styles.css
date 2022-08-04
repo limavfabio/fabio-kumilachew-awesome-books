@@ -34,10 +34,12 @@ section {
   padding-right: 10px;
   width: 100%;
 }
+
 li a {
   text-decoration: none;
   font-size: 18px;
 }
+
 .nav-list {
   display: flex;
   align-items: center;
@@ -89,6 +91,7 @@ li a {
     justify-content: right;
     margin-left: auto;
   }
+
   .footer {
     height: 75px;
     border: 2px solid #111;
@@ -179,9 +182,11 @@ section h1 {
 section h2 {
   text-align: center;
 }
+
 .black-line {
   border-bottom: 3px solid black;
 }
+
 .footer {
   border: 2px solid #000;
   border-radius: 4px;
