@@ -181,3 +181,8 @@ section h1 {
   /* left: 0; */
   width: 40%;
 }
+
+#new-book,
+#contact-section {
+  display: none;
+}

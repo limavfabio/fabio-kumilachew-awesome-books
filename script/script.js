@@ -81,3 +81,33 @@ addBtn.addEventListener('click', () => {
 
 const dateTime = new Date(Date.now());
 year.textContent = dateTime.toUTCString();
+
+// ------------------- Navigation -------------------
+// Variables to hold the navigation links
+const listLink = document.querySelector('#list-link');
+const addLink = document.querySelector('#add-link');
+const contactLink = document.querySelector('#contact-link');
+const booksList = document.querySelector('#books-list');
+const newBook = document.querySelector('#new-book');
+const contactSection = document.querySelector('#contact-section');
+
+// A click listener for the list link to show the books cards
+listLink.addEventListener('click', () => {
+  booksList.style.display = 'block';
+  newBook.style.display = 'none';
+  contactSection.style.display = 'none';
+});
+
+// A click listener for the add link to show the add book form
+addLink.addEventListener('click', () => {
+  booksList.style.display = 'none';
+  newBook.style.display = 'block';
+  contactSection.style.display = 'none';
+});
+
+// A click listener for the contact link to show the contact form
+contactLink.addEventListener('click', () => {
+  booksList.style.display = 'none';
+  newBook.style.display = 'none';
+  contactSection.style.display = 'block';
+});
